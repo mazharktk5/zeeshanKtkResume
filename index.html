@@ -559,81 +559,104 @@
 
 
 
-    <section>
-      <!-- WhatsApp Contact Form -->
-      <form id="whatsapp-form" class="wa-form">
-        <div class="row gy-3">
-          <div class="col-md-6">
-            <input type="text" id="wa-name" class="form-control" placeholder="Your Name" required>
-          </div>
-
-          <div class="col-md-6">
-            <input type="text" id="wa-phone" class="form-control" placeholder="Your Phone (optional)">
-          </div>
-
-          <div class="col-md-12">
-            <textarea id="wa-message" class="form-control" rows="5" placeholder="Your Message..." required></textarea>
-          </div>
-
-          <div class="col-md-12 text-center">
-            <button type="submit" class="wa-btn">
-              <i class="bi bi-whatsapp"></i> Send via WhatsApp
-            </button>
-          </div>
+    <section id="contact" class="py-5">
+      <div class="container">
+        <!-- Heading -->
+        <div class="text-center mb-4">
+          <h2 class="fw-bold text-dark">Contact Me</h2>
+          <p class="text-muted">Send me a quick message on WhatsApp</p>
         </div>
-      </form>
 
-      <style>
-        /* WhatsApp Form Styling */
-        .wa-form .form-control {
-          border-radius: 12px;
-          border: 1px solid lightskyblue;
-          padding: 12px;
-          font-size: 15px;
-        }
+        <!-- WhatsApp Contact Form -->
+        <form id="whatsapp-form" class="wa-form shadow-sm p-4 bg-white rounded">
+          <div class="row gy-3">
+            <div class="col-md-6">
+              <input type="text" id="wa-name" class="form-control" placeholder="Your Name" required>
+            </div>
 
-        .wa-form .form-control:focus {
-          border-color: #128c7e;
-          box-shadow: 0 0 5px rgba(18, 140, 126, 0.4);
-        }
+            <div class="col-md-6">
+              <input type="text" id="wa-phone" class="form-control" placeholder="Your Phone (optional)">
+            </div>
 
-        .wa-btn {
-          background: #25d366;
-          color: white;
-          padding: 12px 25px;
-          border: none;
-          border-radius: 50px;
-          font-size: 16px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: 0.3s;
-        }
+            <div class="col-12">
+              <textarea id="wa-message" class="form-control" rows="5" placeholder="Your Message..." required></textarea>
+            </div>
 
-        .wa-btn i {
-          margin-right: 8px;
-          font-size: 18px;
-        }
-
-        .wa-btn:hover {
-          background: #128c7e;
-        }
-      </style>
-
-      <script>
-        document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          let name = document.getElementById("wa-name").value;
-          let phone = document.getElementById("wa-phone").value;
-          let message = document.getElementById("wa-message").value;
-
-          let phoneNumber = "923370372772"; // your WhatsApp number
-          let url = `https://wa.me/${phoneNumber}?text=👋 Hi, my name is ${name}.%0A📞 Phone: ${phone || "N/A"}%0A💬 Message: ${message}`;
-
-          window.open(url, "_blank");
-        });
-      </script>
+            <div class="col-12 text-center">
+              <button type="submit" class="wa-btn">
+                <i class="bi bi-whatsapp"></i> Send via WhatsApp
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
     </section>
+
+    <style>
+      /* WhatsApp Form Styling */
+      .wa-form {
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .wa-form .form-control {
+        border-radius: 10px;
+        border: 1px solid #ced4da;
+        padding: 12px;
+        font-size: 15px;
+      }
+
+      .wa-form .form-control:focus {
+        border-color: #128c7e;
+        box-shadow: 0 0 5px rgba(18, 140, 126, 0.4);
+      }
+
+      .wa-btn {
+        background: #25d366;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 50px;
+        font-size: 16px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.3s;
+        width: 100%;
+        max-width: 280px;
+      }
+
+      .wa-btn i {
+        margin-right: 8px;
+        font-size: 18px;
+      }
+
+      .wa-btn:hover {
+        background: #128c7e;
+      }
+
+      @media (max-width: 576px) {
+        .wa-form {
+          padding: 20px;
+        }
+      }
+    </style>
+
+    <script>
+      document.getElementById("whatsapp-form").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        let name = document.getElementById("wa-name").value;
+        let phone = document.getElementById("wa-phone").value;
+        let message = document.getElementById("wa-message").value;
+
+        let phoneNumber = "923370372772"; // your WhatsApp number
+        let url = `https://wa.me/${phoneNumber}?text=👋 Hi, my name is ${name}.%0A📞 Phone: ${phone || "N/A"}%0A💬 Message: ${message}`;
+
+        window.open(url, "_blank");
+      });
+    </script>
+
+
 
 
 
